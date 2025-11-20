@@ -19,7 +19,13 @@ class MainMenuScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: GameColors.primaryPurple.withOpacity(0.2),
-                blurRadius: 50,
+                boxShadow: [
+                  BoxShadow(
+                    color: GameColors.primaryPurple.withOpacity(0.4),
+                    blurRadius: 50,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
             ).animate().scale(duration: 2.seconds, curve: Curves.easeInOut).then().scale(begin: const Offset(1, 1), end: const Offset(0.9, 0.9)),
           ),

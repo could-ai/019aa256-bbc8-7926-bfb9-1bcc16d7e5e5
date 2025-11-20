@@ -1,6 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flame/collisions.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart'; // Added for Paint class
 import '../echoes_game.dart';
 import '../../utils/constants.dart';
 
