@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
-import 'package:flame/geometry.dart'; // Added for Rectangle
+import 'package:flame/geometry.dart'; // For Rectangle
 import '../utils/constants.dart';
 import 'components/player.dart';
 import 'components/platform.dart';
@@ -31,8 +31,8 @@ class EchoesGame extends FlameGame with HasKeyboardHandlerComponents, HasCollisi
 
     // 3. Camera Follow
     camera.follow(player);
-    // Use Rectangle from flame/geometry.dart
-    camera.setBounds(Rectangle.fromLTWH(0, 0, 2000, size.y)); 
+    // Fix: Use Rectangle.fromRect with Rect.fromLTWH
+    camera.setBounds(Rectangle.fromRect(Rect.fromLTWH(0, 0, 2000, size.y))); 
   }
 
   void onJoyStickChange(JoystickDirection direction, Vector2 delta) {
